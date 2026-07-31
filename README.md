@@ -31,6 +31,7 @@ Pour ne rouvrir que quelques options sur un projet déjà cadré, ajouter en fin
 | [`GOUVERNANCE-IA.md`](./GOUVERNANCE-IA.md) | La charte : un **noyau** d'invariants, des **options** qui se décident par projet, et l'**entretien de cadrage** qui les pose. C'est ce qu'on lit en début de session. | **Oui**, copie conforme |
 | [`GABARITS.md`](./GABARITS.md) | Squelettes de documents (HTML et Markdown), table de conversion, feuille de style, gabarit de `PROFIL.md`. Consulté au moment d'écrire, pas en début de session. | **Oui**, copie conforme |
 | [`CHANGELOG.md`](./CHANGELOG.md) | Ce qui a changé, révision par révision, pour l'ensemble du dépôt. Document de lecture, sans rôle opérationnel : rien dans la gouvernance d'un projet n'en dépend. | **Non** |
+| [`ROADMAP.md`](./ROADMAP.md) | Ce que la charte pourrait devenir : idées non tranchées et révisions envisagées. Une idée qui n'est pas encore une règle ne s'applique nulle part. | **Non** |
 | [`outils/`](./outils/) | Outillage de poste de travail (statusline). Sans rapport avec la gouvernance d'un projet. | **Non** |
 
 Le contenu des règles est documenté dans les fichiers eux-mêmes, pas ici.
