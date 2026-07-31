@@ -6,12 +6,31 @@ logiciel.
 
 Ce dépôt ne contient **aucun contenu spécifique à un projet particulier**.
 
+## Démarrer
+
+À coller tel quel dans une session d'assistant, sur un projet neuf comme sur un projet existant — la
+charte décide elle-même de laquelle de ses quatre situations d'ouverture il relève :
+
+```
+Gouvernance IA — charte : https://github.com/TooMuhtsh/Claude-Governance.git
+
+Clone ce dépôt (ou tire-le s'il est déjà présent) et lis `GOUVERNANCE-IA.md` en entier ;
+n'ouvre `GABARITS.md` qu'au moment de créer ou restructurer un document. Détermine ensuite
+laquelle des quatre situations d'ouverture s'applique à ce dépôt, mène l'entretien de
+cadrage avant d'écrire quoi que ce soit, puis copie les deux fichiers verbatim dans
+`.AIRules/` et versionne-les.
+```
+
+Pour ne rouvrir que quelques options sur un projet déjà cadré, ajouter en fin de prompt :
+*« — seulement les clés `format`, `seuil` »*.
+
 ## Contenu
 
 | Fichier | Rôle | Voyage dans les projets ? |
 |---|---|---|
 | [`GOUVERNANCE-IA.md`](./GOUVERNANCE-IA.md) | La charte : un **noyau** d'invariants, des **options** qui se décident par projet, et l'**entretien de cadrage** qui les pose. C'est ce qu'on lit en début de session. | **Oui**, copie conforme |
 | [`GABARITS.md`](./GABARITS.md) | Squelettes de documents (HTML et Markdown), table de conversion, feuille de style, gabarit de `PROFIL.md`. Consulté au moment d'écrire, pas en début de session. | **Oui**, copie conforme |
+| [`CHANGELOG.md`](./CHANGELOG.md) | Ce qui a changé, révision par révision, pour l'ensemble du dépôt. Document de lecture, sans rôle opérationnel : rien dans la gouvernance d'un projet n'en dépend. | **Non** |
 | [`outils/`](./outils/) | Outillage de poste de travail (statusline). Sans rapport avec la gouvernance d'un projet. | **Non** |
 
 Le contenu des règles est documenté dans les fichiers eux-mêmes, pas ici.
@@ -33,7 +52,7 @@ révisions le même jour, et se compare par une simple comparaison de chaînes.
 4. En cas d'écart, propager les fichiers **verbatim** (copie conforme, jamais adaptée), vérifier par
    `diff`, puis committer et pousser dans le dépôt du projet.
 
-Comment une révision s'applique dépend de sa nature, et le paragraphe de révision le dit : une
+Comment une révision s'applique dépend de sa nature, et la table des révisions le dit : une
 révision **purement additive** se propage d'office ; une révision qui **touche le noyau ou modifie un
 défaut** se signale et se propose, elle ne s'applique jamais d'office.
 
@@ -43,5 +62,9 @@ accès à ce dépôt-ci.
 
 ## Revoir une révision
 
-`git log -- GOUVERNANCE-IA.md` donne l'historique. La section « Historique des révisions » en fin de
-charte en donne le contenu, révision par révision, avec son régime d'application.
+[`CHANGELOG.md`](./CHANGELOG.md) dit ce que chaque révision a changé, en clair. `git log` donne le
+détail ligne à ligne.
+
+Le **régime d'application** d'une révision — additive, ou touchant le noyau — n'est pas dans le
+changelog : il vit dans la table des révisions en pied de charte, là où un projet cloné sans accès à
+ce dépôt peut encore le lire.
