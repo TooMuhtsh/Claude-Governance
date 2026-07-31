@@ -14,6 +14,37 @@ répété ici : il est déclaré dans la table des révisions, en pied de
 
 ---
 
+## `20260731-203812` — 2026-07-31
+
+Le dépôt se dote d'un changelog et d'un prompt de démarrage. A-7 fixe la fin de vie du fichier
+par lequel une remise à niveau se propose.
+
+**Ajouté**
+
+- **Ce fichier.** Une entrée par révision, pour l'ensemble du dépôt — charte, gabarits, README,
+  outils. Il ne voyage pas dans les `.AIRules/` et rien dans la gouvernance d'un projet n'en dépend :
+  c'est un document de lecture.
+- **Section « Démarrer » dans le README** : un prompt unique, à coller tel quel, qui porte l'URL du
+  dépôt et couvre cadrage initial comme remise à niveau — la charte sait déjà distinguer ses quatre
+  situations d'ouverture. Il va jusqu'à la copie verbatim dans `.AIRules/`, sans quoi le déploiement
+  reste à faire.
+- **A-7 nomme le `REMISE-A-NIVEAU.md`** et lui fixe une fin de vie. Une branche de propagation met à
+  jour les copies conformes d'office, mais n'écrit **aucune ligne** dans ce qui appartient au projet ;
+  ce qu'impliquent ces copies s'écrit dans ce fichier. **Sa vie s'arrête à la fusion** : son contenu
+  rejoint alors le chantier de roadmap qui porte la mise en conformité, et le fichier disparaît.
+  Le laisser vivre après la fusion crée deux emplacements pour le même fait (A-2) — typiquement une
+  roadmap qui affiche la revue comme faite pendant que le fichier liste encore des items ouverts.
+
+**Modifié**
+
+- **L'historique des révisions quitte la charte.** Elle ne garde qu'une table `Version | Régime` et
+  un renvoi vers ce changelog. Le régime reste là parce que c'est la seule information dont un projet
+  cloné sans accès à ce dépôt ait besoin : c'est elle qui décide si une remise à niveau se propage
+  d'office ou se propose. Le récit, lui, ne se lit qu'au moment de réviser, donc là où l'on révise.
+- La phrase d'A-7 qui désignait « le paragraphe de révision » désigne désormais cette table.
+
+---
+
 ## `20260731-150737` — 2026-07-31
 
 Le fichier d'instructions cesse d'être nommé en dur, et sa mise à jour cesse d'être réactive. Deux

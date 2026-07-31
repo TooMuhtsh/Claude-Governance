@@ -267,6 +267,31 @@ identifiants *est* le signal.
 La table des révisions, en pied de page, dit **de quel régime relève chaque révision** :
 sans cette mention, le régime se devine, et il se devine mal.
 
+### `REMISE-A-NIVEAU.md` — un fichier qui meurt à la fusion
+
+Une remise à niveau qui arrive sur une branche — qu'elle vienne d'une veille automatisée
+(option `veille-conformité`) ou d'une propagation menée à la main — **n'a pas le droit
+d'écrire dans les documents de gouvernance du projet** : ce serait appliquer d'office ce qui
+doit se proposer. Sa branche porte donc deux choses de nature opposée : les **copies
+conformes**, mises à jour d'office, et **aucune ligne** dans ce qui appartient au projet — ni
+son index, ni son contexte, ni son journal, ni sa roadmap, ni son `PROFIL.md`.
+
+Ce qu'impliquent ces copies s'écrit dans un **`REMISE-A-NIVEAU.md`** posé à côté d'elles,
+dans `.AIRules/` : révisions traversées, ce que le projet aurait à changer de lui-même,
+pièges rencontrés pendant la propagation. Tout se relit donc au moment de la fusion, en un
+seul endroit.
+
+**Sa vie s'arrête à la fusion.** Tant que la branche n'est pas fusionnée, il est le seul
+endroit où cette information existe, et il est pleinement légitime. Une fois la branche
+fusionnée, son seul contenu propre au projet est du **suivi de chantier** : il décrit dès
+lors le même fait que le chantier de roadmap qui porte la mise en conformité, et deux
+emplacements qui décrivent le même fait divergent (A-2) — typiquement une roadmap qui affiche
+la revue comme faite pendant que le fichier liste encore des items ouverts.
+
+Le geste de fusion se termine donc par : **rapatrier son contenu dans le chantier de roadmap,
+puis supprimer le fichier**. Un `REMISE-A-NIVEAU.md` présent sur la branche principale est une
+anomalie, repérable d'un coup d'œil.
+
 ## A-8 — Annexes
 
 Certains contenus ne tiennent pas dans un document principal sans le rendre illisible :
@@ -902,7 +927,8 @@ Si `oui`, le mandat de la tâche est **strictement borné** :
 - récupérer la révision à jour du dépôt canonique ;
 - créer une **branche dédiée** dans chaque projet concerné — jamais d'écriture directe sur
   la branche principale ;
-- y propager la charte verbatim et, si pertinent, une proposition de remise à niveau ;
+- y propager la charte verbatim et, si pertinent, une proposition de remise à niveau — le
+  `REMISE-A-NIVEAU.md` d'A-7, avec la fin de vie qu'A-7 lui fixe ;
 - **s'arrêter là**. La fusion reste un acte de validation humaine explicite : la tâche ne
   merge jamais d'elle-même et n'écrit jamais directement dans les documents de gouvernance,
   y compris quand l'écart vient d'une détection automatisée.
@@ -1083,6 +1109,7 @@ migrées. Une table de compatibilité sans date de péremption reste éternellem
 
 | Version | Régime |
 |---|---|
+| `20260731-203812` | touche le noyau |
 | `20260731-150737` | touche le noyau |
 | `20260731-135838` | touche le noyau |
 
@@ -1097,6 +1124,6 @@ se propose (A-7). Le récit détaillé, lui, ne se lit qu'au moment de réviser,
 révise.
 
 ---
-*Version de cette charte : **`20260731-150737`**. C'est cet identifiant que reprend la
+*Version de cette charte : **`20260731-203812`**. C'est cet identifiant que reprend la
 mention « Conforme à la charte de gouvernance, version {{id}} » dans le pied de page de
 l'index de gouvernance de chaque projet.*
