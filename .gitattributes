@@ -1,0 +1,5 @@
+# Les fins de ligne LF sont normalisees dans le depot.
+* text=auto eol=lf
+
+# Le script shell doit rester en LF sur disque : un CRLF casse le shebang sous Unix.
+*.sh text eol=lf
