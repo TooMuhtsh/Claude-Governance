@@ -1,27 +1,47 @@
 # Claude-Governance
 
-Dépôt canonique de `GOUVERNANCE-IA.md` : la charte de gouvernance IA réutilisable telle quelle sur
-n'importe quel projet ou workspace de développement, local ou distant (poste perso, projet pro, VPS...),
-indépendamment du langage ou de la nature du logiciel.
+Dépôt canonique de la charte de gouvernance IA, réutilisable telle quelle sur n'importe quel projet
+ou workspace de développement — local ou distant, indépendamment du langage ou de la nature du
+logiciel.
 
-Ce dépôt ne contient **que** la charte elle-même — aucun contenu spécifique à un projet particulier.
-Le contenu de la charte (règles, protocole `.AIRules/`, discipline de vérification...) est documenté
-dans le fichier lui-même, pas ici.
+Ce dépôt ne contient **aucun contenu spécifique à un projet particulier**.
+
+## Contenu
+
+| Fichier | Rôle | Voyage dans les projets ? |
+|---|---|---|
+| [`GOUVERNANCE-IA.md`](./GOUVERNANCE-IA.md) | La charte : un **noyau** d'invariants, des **options** qui se décident par projet, et l'**entretien de cadrage** qui les pose. C'est ce qu'on lit en début de session. | **Oui**, copie conforme |
+| [`GABARITS.md`](./GABARITS.md) | Squelettes de documents (HTML et Markdown), table de conversion, feuille de style, gabarit de `PROFIL.md`. Consulté au moment d'écrire, pas en début de session. | **Oui**, copie conforme |
+| [`outils/`](./outils/) | Outillage de poste de travail (statusline). Sans rapport avec la gouvernance d'un projet. | **Non** |
+
+Le contenu des règles est documenté dans les fichiers eux-mêmes, pas ici.
+
+## Identifiant de version
+
+Chaque révision porte un identifiant horodaté `AAAAMMJJ-HHMMSS` (UTC), figurant au pied de page
+de `GOUVERNANCE-IA.md` et de `GABARITS.md`. Il est monotone, sans collision possible même pour deux
+révisions le même jour, et se compare par une simple comparaison de chaînes.
 
 ## Utilisation dans un projet
 
-1. Le projet garde une copie de `GOUVERNANCE-IA.md` dans son propre `.AIRules/` (ou son équivalent),
-   **versionnée avec son code** — voir la Règle 1 de la charte pour le détail et le motif.
-2. Pour vérifier si cette copie est à jour : cloner ou tirer ce dépôt, comparer la date de pied de
-   page des deux fichiers. La date est le seul numéro de version — une copie dont elle est antérieure
-   à celle de ce dépôt est une copie périmée.
-3. En cas d'écart, propager le fichier de ce dépôt **verbatim** dans le projet (copie conforme, jamais
-   adaptée), vérifier par `diff`, puis committer et pousser dans le dépôt du projet.
+1. Le projet garde une copie de `GOUVERNANCE-IA.md` **et** de `GABARITS.md` dans son propre
+   `.AIRules/`, versionnées avec son code — voir A-7 de la charte pour le motif.
+2. Il porte en plus un `PROFIL.md`, **propre à lui** et jamais copié d'ailleurs : les réponses de son
+   entretien de cadrage. Gabarit dans `GABARITS.md`.
+3. Pour vérifier si les copies sont à jour : tirer ce dépôt et comparer les identifiants de version.
+   Un identifiant inférieur signale une copie périmée, sans avoir à lire le contenu.
+4. En cas d'écart, propager les fichiers **verbatim** (copie conforme, jamais adaptée), vérifier par
+   `diff`, puis committer et pousser dans le dépôt du projet.
 
-Aucune dépendance Git (pas de submodule, pas de subtree) : chaque projet garde une copie autonome,
+Comment une révision s'applique dépend de sa nature, et le paragraphe de révision le dit : une
+révision **purement additive** se propage d'office ; une révision qui **touche le noyau ou modifie un
+défaut** se signale et se propose, elle ne s'applique jamais d'office.
+
+Aucune dépendance Git (pas de submodule, pas de subtree) : chaque projet garde des copies autonomes,
 pour que son propre `git clone` reste suffisant pour tout récupérer — y compris sur une machine sans
 accès à ce dépôt-ci.
 
 ## Revoir une révision
 
-`git log -- GOUVERNANCE-IA.md` donne l'historique des révisions de la charte elle-même.
+`git log -- GOUVERNANCE-IA.md` donne l'historique. La section « Historique des révisions » en fin de
+charte en donne le contenu, révision par révision, avec son régime d'application.
