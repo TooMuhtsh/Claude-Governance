@@ -14,6 +14,18 @@ répété ici : il est déclaré dans la table des révisions, en pied de
 
 ---
 
+## `20260731-204511` — 2026-07-31
+
+**Corrigé**
+
+- **Le gabarit de `PROFIL.md` codait un identifiant de charte en dur** (`20260731-150737`) là où il
+  attend un substituant, au milieu de champs qui en utilisent partout ailleurs (`{{date}}`,
+  `{{mot}}`). Tout `PROFIL.md` créé depuis ce gabarit serait né en déclarant avoir été cadré sous une
+  version qui n'est pas la sienne — un fait faux, écrit dans le fichier qui sert précisément à savoir
+  sous quelle version les options ont été tranchées. La ligne attend désormais `{{id}}`.
+
+---
+
 ## `20260731-203812` — 2026-07-31
 
 Le dépôt se dote d'un changelog et d'un prompt de démarrage. A-7 fixe la fin de vie du fichier
