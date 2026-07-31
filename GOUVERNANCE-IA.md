@@ -239,6 +239,14 @@ incomplet.
   Un projet peut légitimement rester sur une convention antérieure — projet en fin de vie,
   convention volontairement figée, révision non pertinente pour lui.
 
+**Ce qui se propose, c'est la remise à niveau du projet, jamais la copie.** Les deux
+fichiers canoniques se propagent d'office dans tous les cas : une copie périmée n'est pas
+une convention antérieure assumée, c'est une copie qu'on ne peut plus comparer. Ce qui
+attend l'arbitrage, c'est ce que le projet change **de lui-même** — ses documents, son
+`PROFIL.md`, la mention de conformité de son pied de page. Une copie à jour posée à côté
+d'un projet non remis à niveau est un état normal et lisible : l'écart entre les deux
+identifiants *est* le signal.
+
 Le paragraphe de révision, en pied de page, dit **de quel régime relève chaque révision** :
 sans cette mention, le régime se devine, et il se devine mal.
 
@@ -834,18 +842,22 @@ Quatre déclencheurs :
 
 ## Profils de départ
 
-Poser vingt questions à chaque SETUP garantit qu'il ne sera jamais mené jusqu'au bout.
+Poser dix-neuf questions à chaque SETUP garantit qu'il ne sera jamais mené jusqu'au bout.
 L'entretien commence donc par **un mot**, puis se poursuit en écrasant les points qu'on veut.
 
-| Profil | Ce qu'il pose |
+| Profil | Pour quel projet |
 |---|---|
-| **`minimal`** | `documents = 3`, `seuil = tout-libre`, `roadmap-avant-code = non`, `statuts = réduit`, `veille-conformité = non`. Prototype, expérimentation, projet dont on ne sait pas encore s'il vivra. |
-| **`standard`** | Tous les défauts de la partie B. Le cas ordinaire. |
-| **`complet`** | Tous les défauts, plus `veille-conformité = oui` et `outillage = oui`. Projet installé, suivi dans la durée. |
+| **`minimal`** | Prototype, expérimentation, projet dont on ne sait pas encore s'il vivra. Allège tout ce qui coûte plus qu'il ne protège à ce stade. |
+| **`standard`** | Le cas ordinaire : tous les défauts de la partie B. |
+| **`complet`** | Projet installé, suivi dans la durée. Active ce que les autres profils laissent de côté. |
+
+**Ce que chaque profil pose exactement est dans [`GABARITS.md`](./GABARITS.md), § 7** — une
+seule table, un seul endroit. La redire ici en produirait une seconde qui divergerait, ce
+qu'A-2 interdit précisément.
 
 Les questions **sans défaut** (`visibilité`, `attribution`, `authentification`,
-`validation`, `jetables`, `discipline-test`, `validateur`) se posent **quel que soit le
-profil** : aucun profil ne peut y répondre à votre place.
+`validation`, `jetables`, `discipline-test`, `validateur`) ne figurent dans aucun profil et
+se posent **quel qu'il soit** : aucun profil ne peut y répondre à votre place.
 
 ## Comment mener l'entretien
 

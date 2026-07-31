@@ -142,11 +142,10 @@ Ordre des sections après le `<h1>{{Nom du projet}} — Gouvernance IA</h1>` :
    `git clone` récupère tout.
 4. **`Structure`** : tableau à deux colonnes (`Fichier` / `Contenu`) listant les autres
    documents, `PROFIL.md` compris, avec une phrase de description chacun. Sert de point
-   d'entrée cliquable.
-5. **`Cadrage`** : trois lignes reprenant les choix structurants du `PROFIL.md` — format,
-   nombre de documents, seuil de feu vert — et un lien vers lui. Le détail vit dans
-   `PROFIL.md` ; l'index n'en donne que le nécessaire pour savoir à quoi on a affaire.
-6. **`Protocole`**, trois sous-sections :
+   d'entrée cliquable. C'est **le seul endroit de l'index qui mentionne le cadrage** : une
+   ligne et un lien vers `PROFIL.md`, jamais un résumé de ses choix. Un résumé ferait de
+   l'index une seconde source de vérité, et c'est celle qu'on oublie de corriger.
+5. **`Protocole`**, trois sous-sections :
    - **`En début de session sur ce projet`** : liste ordonnée des étapes avant de coder —
      typiquement lire le contexte (invariants et pièges), lire le haut du journal (où en est
      le dernier chantier actif), vérifier l'état réel du projet avant de faire confiance à
@@ -163,7 +162,7 @@ Ordre des sections après le `<h1>{{Nom du projet}} — Gouvernance IA</h1>` :
      rappel explicite que les entrées déjà écrites du journal ne se modifient jamais.
    - Si le projet a une **discipline de test** (option `discipline-test`), une dernière
      sous-section qui la rappelle en une ou deux phrases.
-7. **Pied de page** : nom du projet + date de la dernière restructuration de la gouvernance
+6. **Pied de page** : nom du projet + date de la dernière restructuration de la gouvernance
    elle-même (pas la date du dernier chantier), suivie de **« Conforme à la charte de
    gouvernance, version {{id}} »**.
 
@@ -434,7 +433,7 @@ Réponses de cadrage de ce projet. La charte qui les rend nécessaires est
 | `tempfiles` | `oui` | défaut appliqué, non tranché |
 | `distant` | `oui` | défaut appliqué, non tranché |
 | `visibilité` | `public` | destiné à être publié dès le départ |
-| `attribution` | `non` | dépôt public — l'historique de collaboration n'est pas destiné à la publication |
+| `attribution` | {{oui ou non}} | {{motif — décision d'auteur, à trancher explicitement}} |
 | `authentification` | {{compte}} via {{méthode}} | — |
 | `branches` | `branche` | défaut appliqué, non tranché |
 | `seuil` | `strict` | défaut appliqué, non tranché |
