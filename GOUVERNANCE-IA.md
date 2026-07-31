@@ -30,6 +30,23 @@ modèle de `PROFIL.md`. Il est volontairement **hors de ce fichier** : on ne le 
 moment de créer ou de restructurer un document, jamais en début de session. Il voyage
 avec la charte, dans le même `.AIRules/`.
 
+### Les identifiants de cette charte sont stables
+
+Les identifiants d'invariant (`A-1`…`A-15`) et les clés d'option (`format`, `seuil`…) sont
+**attribués une fois et ne bougent plus** — c'est exactement ce qu'A-6 impose aux projets,
+et la charte n'en est pas dispensée. Ils sont cités des dizaines de fois ici même, dans les
+gabarits, et depuis les documents de chaque projet ; une renumérotation les casserait tous
+en silence.
+
+Conséquences pour une révision future :
+
+- un invariant ajouté prend le **numéro suivant**, quelle que soit sa place logique dans le
+  document — l'ordre de lecture peut donc diverger de l'ordre numérique, et c'est le prix à
+  payer ;
+- un invariant retiré **laisse son numéro consommé** ; il ne se réattribue jamais ;
+- une option renommée est une **option nouvelle**, l'ancienne clé restant documentée comme
+  abandonnée le temps que les `PROFIL.md` migrent.
+
 ### Ce fichier reste la référence, à tout moment
 
 La charte ne se lit pas seulement au moment d'un SETUP ou d'une mise en conformité :
@@ -985,6 +1002,9 @@ lieu de les supposer.
 
 - **Identifiant de version horodaté** `AAAAMMJJ-HHMMSS` en remplacement de la date de pied
   de page, qui ne savait pas distinguer deux révisions du même jour.
+- **Les identifiants `A-x` et les clés d'option sont déclarés stables**, au même titre que
+  ceux qu'A-6 impose aux projets : ils sont devenus des références porteuses, et rien ne
+  protégeait la charte de se casser elle-même à la révision suivante.
 - Le **format des documents devient une option**, `html` par défaut, avec un gabarit
   Markdown équivalent et la possibilité d'en ajouter d'autres.
 - Les squelettes de documents et le modèle de profil sortent dans **`GABARITS.md`**, lu
