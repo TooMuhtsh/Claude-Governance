@@ -1109,6 +1109,7 @@ migrées. Une table de compatibilité sans date de péremption reste éternellem
 
 | Version | Régime |
 |---|---|
+| `20260731-204511` | purement additive |
 | `20260731-203812` | touche le noyau |
 | `20260731-150737` | touche le noyau |
 | `20260731-135838` | touche le noyau |
@@ -1124,6 +1125,6 @@ se propose (A-7). Le récit détaillé, lui, ne se lit qu'au moment de réviser,
 révise.
 
 ---
-*Version de cette charte : **`20260731-203812`**. C'est cet identifiant que reprend la
+*Version de cette charte : **`20260731-204511`**. C'est cet identifiant que reprend la
 mention « Conforme à la charte de gouvernance, version {{id}} » dans le pied de page de
 l'index de gouvernance de chaque projet.*
