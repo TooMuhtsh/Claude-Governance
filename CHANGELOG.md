@@ -14,6 +14,44 @@ répété ici : il est déclaré dans la table des révisions, en pied de
 
 ---
 
+## `20260803-182826` — 2026-08-03
+
+Une passe de vérifications manuelles peut désormais se dérouler sur un document dédié plutôt que
+dans le fil de la conversation. Option et gabarit ; le noyau ne bouge pas.
+
+**Ajouté**
+
+- **Option `support-test`** — à partir de combien de vérifications une passe se déroule sur un
+  document dédié. Un **nombre** (défaut `8`), ou `prose` / `fichier` pour trancher une fois pour
+  toutes. Un seuil plutôt qu'un choix binaire : le point de bascule dépend du projet et de la nature
+  des tests — six vérifications longues pèsent plus que douze gestes triviaux — et l'arbitrage autour
+  du seuil reste au jugement. L'option ne dépend pas de `test-manuel` : elle porte le support, pas la
+  décision de tester à la main, et sert aussi à une recette avant publication, à un contrôle de
+  non-régression, ou à un projet sans interface à cliquer.
+- **`GABARITS.md` § 8 — support de passe de test** : ossature obligatoire, structure de données à
+  réécrire d'une passe à l'autre, **contrat de sortie du rapport**, et deux pièges d'implémentation.
+  Ce § existe parce que les oublis d'un support de passe sont **invisibles depuis l'écran** : une
+  criticité affichée mais absente du rapport, une passe sans version testée, un état qui confond
+  « pas encore fait » et « sans objet » ne se constatent qu'une fois la passe terminée et l'occasion
+  passée.
+
+**Ce que l'option retient de l'usage, et qui n'allait pas de soi**
+
+- Le motif du document est l'**endurance**, pas la précision du compte rendu. Ce qui use sur une
+  longue passe : ne pas voir la fin, le va-et-vient avec l'application testée, et la reprise après
+  interruption. Une passe abandonnée aux deux tiers ne vaut pas une passe courte bien rapportée.
+- Les repères de progression sont **fonctionnels, pas décoratifs**, et se complètent au lieu de se
+  remplacer : nombre restant, proportion visuelle, état visible de chaque ligne.
+- Le quatrième état **non applicable** ne prend pas de bouton — il se déduit d'un test sans réponse
+  et commenté. La distinction qu'A-4 impose à la colonne `Hash` est réelle, mais elle se paie au
+  rapport plutôt que sur chaque ligne.
+- Le document **n'est pas jetable entre deux passes du même chantier** : il se réédite, ses numéros
+  restent stables (A-6), et il ne disparaît qu'à la consignation.
+- Le rapport **ne liste pas ce qui a réussi** : le silence vaut réussite, et c'est l'en-tête — date
+  et version testée — qui l'empêche d'être ambigu.
+
+---
+
 ## `20260731-204511` — 2026-07-31
 
 **Corrigé**
