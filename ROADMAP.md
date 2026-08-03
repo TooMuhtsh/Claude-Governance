@@ -75,8 +75,8 @@ ici plutôt que depuis le workspace.
 >
 > Les quatre documents doubleraient de même ce que ce dépôt porte déjà à sa racine — le `CHANGELOG.md`
 > **est** son journal, `ROADMAP.md` **est** sa roadmap, le `README.md` **est** son index. Quant au
-> `PROFIL.md`, il demanderait de trancher vingt-deux options dont la plupart n'ont pas d'objet pour un
-> dépôt qui ne produit aucun logiciel.
+> `PROFIL.md`, il demanderait de trancher toutes les options de la partie B, dont la plupart n'ont
+> pas d'objet pour un dépôt qui ne produit aucun logiciel.
 >
 > A-1 vise un **dépôt de projet** : celui-ci est le dépôt de la charte. Il applique ce qu'elle dit là
 > où c'est du sens — identifiants stables, ajout seul du changelog, propagation verbatim, régimes de
