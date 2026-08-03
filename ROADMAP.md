@@ -44,10 +44,11 @@ passé une certaine taille.
 
 Trois constats en découlent, et deux d'entre eux n'allaient pas de soi :
 
-- **L'archivage (A-9) n'est pas une alternative à ce chantier.** L'hypothèse était que le volume
-  venait de l'accumulation et qu'A-9 le résorberait sans toucher au format. Aucun chantier n'a plus
-  de quinze jours dans aucun des deux journaux : il n'y a rien à archiver. A-9 traitera l'ancienneté,
-  il ne traite pas ce qui gonfle ces fichiers aujourd'hui.
+- **L'archivage (A-9) ne remplace pas ce chantier, mais il en est le moyen de bascule.** Il ne
+  résorbe pas la densité — un chantier archivé garde ses entrées de 617 caractères, simplement
+  ailleurs. Il permet en revanche de repartir d'un journal principal vide sans réécrire une seule
+  entrée, ce qu'A-4 interdirait. À ne pas confondre : ce chantier traite le **coût par entrée**,
+  A-9 traite le **volume accumulé**.
 - **Le poids vient du texte, pas du balisage** — 44 à 58 % du fichier pour les seuls résumés. Alléger
   la structure ne rendrait presque rien ; borner le texte rend beaucoup.
 - **La dérive n'est pas marginale, c'est la norme** : 93 % des entrées du plus gros journal dépassent
@@ -72,12 +73,18 @@ Ce qui reste à trancher :
 - **La portée de « obligatoire ».** Si le format s'impose quel que soit l'option `format`, la révision
   touche le noyau ou le gabarit commun : régime de propagation qui **se propose** projet par projet,
   jamais d'office (A-7). Si ce n'est qu'une nouvelle valeur d'option, la révision est additive.
-- **Les journaux existants** — *instruit : le coût est plus élevé qu'il n'y paraissait*. A-4 interdit
-  de réécrire une entrée écrite, donc le format log ne s'applique qu'aux entrées **nouvelles**.
-  L'échappatoire envisagée — passer l'ancien en `archive/` (A-9) — **n'est pas disponible** : rien
-  n'est archivable avant longtemps, la mesure le montre. Les journaux existants cohabiteront donc
-  durablement avec deux formats, et c'est le vrai prix de la révision. Le choix se fait une fois,
-  dans la révision, pas projet par projet.
+- **Les journaux existants** — *instruit : la bascule nette est possible, par A-9 et non par
+  réécriture*. A-4 interdit de réécrire une entrée écrite : **aucune migration de format ne peut
+  toucher l'existant**, quel qu'en soit le coût, et « ça ne concerne qu'un seul fichier » n'y change
+  rien — l'interdit porte sur le geste, pas sur son ampleur.
+  La voie propre est celle qu'A-9 ouvre déjà : **archiver l'ancien format en bloc** — déplacement
+  intégral, ligne de renvoi en place, rien de réécrit — et repartir au format log dans le journal
+  principal. **A-9 ne pose aucun critère d'ancienneté** : il vise un document devenu long et archive
+  un chantier *clos*, pas un chantier *vieux*. Un journal d'un mois y est donc éligible, et la
+  cohabitation à deux formats se réduit à une ligne de renvoi par chantier archivé.
+  Deux conditions à ne pas perdre de vue : l'archivage **attend le feu vert** (A-3), et il crée un
+  fichier de plus plus des liens à tenir. Le choix se fait une fois, dans la révision, pas projet par
+  projet.
 
 *À vérifier avant d'écrire quoi que ce soit : que la précision survit réellement. Reprendre deux ou
 trois entrées longues d'un journal existant, les réduire au format log, et regarder ce qui saute —
