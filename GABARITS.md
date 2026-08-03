@@ -628,5 +628,5 @@ Cinq exigences derrière cette forme :
 > échoue en silence fait croire à un rapport copié.
 
 ---
-*Version de ce fichier : **`20260803-182826`**. Il suit l'identifiant de
+*Version de ce fichier : **`20260803-200821`**. Il suit l'identifiant de
 [`GOUVERNANCE-IA.md`](./GOUVERNANCE-IA.md) et se propage avec elle.*

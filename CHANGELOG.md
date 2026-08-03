@@ -14,6 +14,35 @@ répété ici : il est déclaré dans la table des révisions, en pied de
 
 ---
 
+## `20260803-200821` — 2026-08-03
+
+Deux dettes de la charte sur elle-même : une table de transition dont la condition de retrait était
+inatteignable, et un corollaire d'A-6 que la charte imposait aux projets sans se l'appliquer.
+
+**Retiré**
+
+- **La table de correspondance avec la numérotation antérieure** (`Règle N` → `A-x`). Elle se
+  déclarait « temporaire, à retirer une fois les références des projets migrées » — condition
+  **impossible à satisfaire** : les seules références survivantes vivent dans les **journaux** des
+  projets, qu'A-4 interdit de réécrire. Elle serait donc restée éternellement, ce que sa propre
+  note disait vouloir éviter.
+  Second motif, décisif : la charte est copiée dans **tous** les projets, y compris ceux qui n'ont
+  jamais connu l'ancienne numérotation — ils recevaient une table de conversion vers un vocabulaire
+  qu'ils n'ont jamais employé. Aucun document vivant (contexte, roadmap, index, fichier
+  d'instructions) ne cite plus `Règle N` ; un journal qui la mentionne décrit ce qui se disait à
+  l'époque, et c'est au projet concerné, s'il le souhaite, de porter sa propre note de
+  correspondance — pas à la charte de la porter pour tout le monde.
+
+**Ajouté**
+
+- **Le prochain numéro d'invariant libre (`A-16`) figure désormais en tête** de la section sur la
+  stabilité des identifiants. A-6 l'exige de tout document à numérotation stable, et la charte
+  déclarait explicitement ne pas s'en dispenser — elle ne l'appliquait pourtant nulle part. L'ordre
+  d'affichage ne suivant pas la numérotation, aucune lecture partielle ne donnait le dernier numéro
+  attribué.
+
+---
+
 ## `20260803-182826` — 2026-08-03
 
 Une passe de vérifications manuelles peut désormais se dérouler sur un document dédié plutôt que
