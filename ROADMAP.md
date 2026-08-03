@@ -1,6 +1,6 @@
 # Roadmap
 
-*Dernière revue : 2026-07-31.*
+*Dernière revue : 2026-08-03.*
 
 Ce que la charte et les gabarits **pourraient** devenir : idées non tranchées, révisions envisagées,
 décisions de périmètre. Ce qui a déjà changé est dans [`CHANGELOG.md`](./CHANGELOG.md) ; ce qui
@@ -15,6 +15,7 @@ encore une règle n'a rien à faire dans le dossier qui dit ce qui s'applique.
 | Chantier | Statut | Priorité |
 |---|---|---|
 | [`AI-HISTORY` au format log obligatoire](#ai-history-au-format-log-obligatoire) | Prévu — idée, design à établir | Non datée |
+| [Gouverner ce dépôt par sa propre charte](#gouverner-ce-dépôt-par-sa-propre-charte) | Écarté | Sans objet |
 
 ## Non daté — à faire quand utile
 
@@ -55,3 +56,33 @@ Ce qui reste à trancher :
 trois entrées longues d'un journal existant, les réduire au format log, et regarder ce qui saute —
 si ce qui saute est du remplissage, l'idée tient ; si c'est une décision ou une cause, elle ne tient
 pas sous cette forme.*
+
+## Hors périmètre
+
+### Gouverner ce dépôt par sa propre charte
+
+L'idée était de traiter ce dépôt comme n'importe quel projet gouverné : lui créer un `.AIRules/`
+conforme à A-1 — index, contexte, journal, roadmap, `PROFIL.md`, plus les deux copies conformes — et
+un fichier d'instructions à sa racine (A-11) pour accueillir une session qui démarre directement
+ici plutôt que depuis le workspace.
+
+> **❗ Écarté : appliquer A-1 ici fabriquerait la duplication qu'A-2 interdit**
+>
+> Un `.AIRules/` dans ce dépôt contiendrait une **copie conforme de `GOUVERNANCE-IA.md` et de
+> `GABARITS.md` posée à côté des originaux**, dans le seul dépôt au monde où ces fichiers *sont*
+> l'original. Deux emplacements pour le même contenu, dont l'un se réviserait un jour sans l'autre :
+> exactement le mécanisme qu'A-2 existe pour empêcher, et il frapperait la charte elle-même.
+>
+> Les quatre documents doubleraient de même ce que ce dépôt porte déjà à sa racine — le `CHANGELOG.md`
+> **est** son journal, `ROADMAP.md` **est** sa roadmap, le `README.md` **est** son index. Quant au
+> `PROFIL.md`, il demanderait de trancher vingt-deux options dont la plupart n'ont pas d'objet pour un
+> dépôt qui ne produit aucun logiciel.
+>
+> A-1 vise un **dépôt de projet** : celui-ci est le dépôt de la charte. Il applique ce qu'elle dit là
+> où c'est du sens — identifiants stables, ajout seul du changelog, propagation verbatim, régimes de
+> révision — sans se plier à la forme qu'elle prescrit à ses sujets.
+
+Ce qui est assumé avec cette exclusion : une session ouverte directement dans ce dépôt n'y trouve
+aucun fichier auto-chargé qui lui dise quoi lire. En pratique, deux chemins couvrent le cas — le
+fichier d'instructions du workspace, qui décrit ce dépôt et ce qui vit dedans, et la section
+« Démarrer » du `README.md` pour qui arrive de l'extérieur par un `git clone`.
