@@ -14,7 +14,7 @@ encore une règle n'a rien à faire dans le dossier qui dit ce qui s'applique.
 
 | Chantier | Statut | Priorité |
 |---|---|---|
-| [`AI-HISTORY` au format log obligatoire](#ai-history-au-format-log-obligatoire) | Prévu — idée, design à établir | Non datée |
+| [`AI-HISTORY` au format log obligatoire](#ai-history-au-format-log-obligatoire) | Prévu — instruit par la mesure, design à établir | Non datée |
 | [Gouverner ce dépôt par sa propre charte](#gouverner-ce-dépôt-par-sa-propre-charte) | Écarté | Sans objet |
 
 ## Non daté — à faire quand utile
@@ -27,18 +27,43 @@ aussi précis.
 
 Ce que fait le gabarit aujourd'hui : un tableau `Date | Hash | Résumé` par chantier, avec un
 paragraphe de contexte optionnel au-dessus. **Rien ne borne la cellule `Résumé`**, et l'usage réel
-l'a remplie de paragraphes entiers — gras, liens d'ancre, sous-parties. Ordre de grandeur observé sur
-un projet du workspace : 59 entrées réparties en 18 chantiers occupent 842 lignes et 65 Ko de HTML,
-soit une quinzaine de lignes par entrée. Le coût n'est pas seulement l'écriture : c'est un document
-que la charte fait relire, et qu'on ne relit plus d'un bout à l'autre passé cette taille.
+l'a remplie de paragraphes entiers — gras, liens d'ancre, sous-parties. Le coût n'est pas seulement
+l'écriture : c'est un document que la charte fait relire, et qu'on ne relit plus d'un bout à l'autre
+passé une certaine taille.
+
+**Mesuré le 2026-08-03** sur les journaux de deux projets réels, tous deux âgés de moins d'un mois :
+
+| | projet A | projet B |
+|---|---|---|
+| Journal | 2252 lignes · 168 Ko | 845 lignes · 62 Ko |
+| Chantiers · entrées | 46 · 117 | 18 · 70 |
+| **Résumé médian** | **617 caractères** | **501 caractères** |
+| Résumés au-delà de 200 caractères | 93 % | 64 % |
+| Part du fichier occupée par le texte des résumés | 44 % | 58 % |
+| Chantiers dont la dernière entrée a plus de 14 jours | **0** | **0** |
+
+Trois constats en découlent, et deux d'entre eux n'allaient pas de soi :
+
+- **L'archivage (A-9) n'est pas une alternative à ce chantier.** L'hypothèse était que le volume
+  venait de l'accumulation et qu'A-9 le résorberait sans toucher au format. Aucun chantier n'a plus
+  de quinze jours dans aucun des deux journaux : il n'y a rien à archiver. A-9 traitera l'ancienneté,
+  il ne traite pas ce qui gonfle ces fichiers aujourd'hui.
+- **Le poids vient du texte, pas du balisage** — 44 à 58 % du fichier pour les seuls résumés. Alléger
+  la structure ne rendrait presque rien ; borner le texte rend beaucoup.
+- **La dérive n'est pas marginale, c'est la norme** : 93 % des entrées du plus gros journal dépassent
+  200 caractères, et sa médiane à 617 vaut quatre ou cinq phrases.
 
 Ce qui reste à trancher :
 
-- **Ce qui borne une ligne.** Longueur maximale, une phrase, ou une liste de champs fixes ? Sans
-  borne écrite, le format log dérivera exactement comme la colonne `Résumé` a dérivé.
-- **Le groupement par chantier.** Un log est plat et chronologique ; le gabarit actuel groupe par
-  chantier, l'ordre chronologique ne valant qu'à l'intérieur d'un groupe. Soit `Chantier` devient un
-  champ de la ligne, soit le groupement survit et le « log » ne l'est qu'à l'intérieur d'une section.
+- **Ce qui borne une ligne** — *instruit : la borne doit être un nombre*. « Une phrase » ne borne
+  rien, la médiane actuelle en vaut déjà quatre ou cinq ; une contrainte qualitative reproduirait
+  mot pour mot l'histoire de la colonne `Résumé`, qui n'était pas bornée non plus. Un plafond de
+  l'ordre de **200 caractères** se vérifie d'un `grep` et divise le texte par trois. Reste à fixer le
+  nombre exact.
+- **Le groupement par chantier** — *instruit : les chiffres penchent vers l'aplatissement*. 46
+  chantiers pour 117 entrées, soit **2,5 entrées par chantier** : le groupement fabrique autant
+  d'en-têtes, d'ancres et de paragraphes de contexte que de groupes de deux entrées. `Chantier`
+  comme champ de la ligne coûte moins et perd peu. À confirmer sur le point suivant, dont il dépend.
 - **Le paragraphe de contexte de chantier.** Il porte le *pourquoi* d'un chantier — qui l'a signalé,
   ce qui l'a déclenché. S'il disparaît du journal, il doit atterrir quelque part (roadmap ? contexte ?)
   ou être assumé comme perdu ; A-2 interdit de le laisser exister à deux endroits.
@@ -47,10 +72,12 @@ Ce qui reste à trancher :
 - **La portée de « obligatoire ».** Si le format s'impose quel que soit l'option `format`, la révision
   touche le noyau ou le gabarit commun : régime de propagation qui **se propose** projet par projet,
   jamais d'office (A-7). Si ce n'est qu'une nouvelle valeur d'option, la révision est additive.
-- **Les journaux existants.** A-4 interdit de réécrire une entrée écrite. Le format log ne peut donc
-  s'appliquer qu'aux entrées **nouvelles** : un journal existant vivra avec deux formats, à moins de
-  passer l'ancien en `archive/` (A-9). Le choix se fait une fois, dans la révision, pas projet par
-  projet.
+- **Les journaux existants** — *instruit : le coût est plus élevé qu'il n'y paraissait*. A-4 interdit
+  de réécrire une entrée écrite, donc le format log ne s'applique qu'aux entrées **nouvelles**.
+  L'échappatoire envisagée — passer l'ancien en `archive/` (A-9) — **n'est pas disponible** : rien
+  n'est archivable avant longtemps, la mesure le montre. Les journaux existants cohabiteront donc
+  durablement avec deux formats, et c'est le vrai prix de la révision. Le choix se fait une fois,
+  dans la révision, pas projet par projet.
 
 *À vérifier avant d'écrire quoi que ce soit : que la précision survit réellement. Reprendre deux ou
 trois entrées longues d'un journal existant, les réduire au format log, et regarder ce qui saute —
