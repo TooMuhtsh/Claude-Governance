@@ -15,6 +15,7 @@ encore une règle n'a rien à faire dans le dossier qui dit ce qui s'applique.
 | Chantier | Statut | Priorité |
 |---|---|---|
 | [`AI-HISTORY` au format log obligatoire](#ai-history-au-format-log-obligatoire) | Prévu — instruit par la mesure, design à établir | Non datée |
+| [Nommer l'exception de conversion de format dans A-4](#nommer-lexception-de-conversion-de-format-dans-a-4) | Prévu — mécanisme tranché, texte à écrire | Non datée |
 | [Gouverner ce dépôt par sa propre charte](#gouverner-ce-dépôt-par-sa-propre-charte) | Écarté | Sans objet |
 
 ## Non daté — à faire quand utile
@@ -73,23 +74,72 @@ Ce qui reste à trancher :
 - **La portée de « obligatoire ».** Si le format s'impose quel que soit l'option `format`, la révision
   touche le noyau ou le gabarit commun : régime de propagation qui **se propose** projet par projet,
   jamais d'office (A-7). Si ce n'est qu'une nouvelle valeur d'option, la révision est additive.
-- **Les journaux existants** — *instruit : la bascule nette est possible, par A-9 et non par
-  réécriture*. A-4 interdit de réécrire une entrée écrite : **aucune migration de format ne peut
-  toucher l'existant**, quel qu'en soit le coût, et « ça ne concerne qu'un seul fichier » n'y change
-  rien — l'interdit porte sur le geste, pas sur son ampleur.
-  La voie propre est celle qu'A-9 ouvre déjà : **archiver l'ancien format en bloc** — déplacement
-  intégral, ligne de renvoi en place, rien de réécrit — et repartir au format log dans le journal
-  principal. **A-9 ne pose aucun critère d'ancienneté** : il vise un document devenu long et archive
-  un chantier *clos*, pas un chantier *vieux*. Un journal d'un mois y est donc éligible, et la
-  cohabitation à deux formats se réduit à une ligne de renvoi par chantier archivé.
-  Deux conditions à ne pas perdre de vue : l'archivage **attend le feu vert** (A-3), et il crée un
-  fichier de plus plus des liens à tenir. Le choix se fait une fois, dans la révision, pas projet par
-  projet.
+- **Les journaux existants** — *instruit : deux voies, aucune ne réécrit le fond*. Soit **archiver
+  l'ancien format en bloc** (A-9 : déplacement intégral, ligne de renvoi en place) et repartir d'un
+  journal principal vide — A-9 ne pose **aucun critère d'ancienneté**, il vise un document devenu
+  long et archive un chantier *clos*, pas un chantier *vieux*, donc un journal d'un mois y est
+  éligible ; soit **convertir l'existant à contenu constant**, ce qui suppose le chantier
+  [Nommer l'exception de conversion de format dans A-4](#nommer-lexception-de-conversion-de-format-dans-a-4).
+  L'archivage attend le feu vert (A-3) et crée des liens à tenir ; la conversion ne coûte rien à la
+  précision mais demande que la charte l'autorise explicitement. Le choix se fait une fois, dans la
+  révision, pas projet par projet.
 
 *À vérifier avant d'écrire quoi que ce soit : que la précision survit réellement. Reprendre deux ou
 trois entrées longues d'un journal existant, les réduire au format log, et regarder ce qui saute —
 si ce qui saute est du remplissage, l'idée tient ; si c'est une décision ou une cause, elle ne tient
 pas sous cette forme.*
+
+### Nommer l'exception de conversion de format dans A-4
+
+A-4 pose qu'une entrée de journal écrite **ne se réécrit jamais, même fausse**. Prise à la lettre,
+la règle interdit aussi de faire passer un journal existant d'un format à un autre — ce qui bloque
+la bascule envisagée au chantier précédent, et bloquerait de la même façon tout changement de
+support futur.
+
+**Ce que la règle protège réellement, c'est le fond.** Le « même fausse » le dit : elle vise la
+correction après coup, l'histoire réarrangée pour être plus présentable. Convertir un tableau en
+lignes de log **sans toucher au texte** ne réécrit rien de ce qu'A-4 défend — c'est un changement de
+rendu. Mais ce raisonnement ne figure nulle part : aujourd'hui il se plaide au lieu de se lire, et
+une règle qu'il faut plaider n'en est plus une.
+
+**Exception à nommer**, sous quatre conditions cumulatives :
+
+- **décidée en révision**, jamais au fil d'une session ;
+- **appliquée en une fois**, à tout le document — pas entrée par entrée ;
+- **à contenu constant** : le texte de chaque entrée est transporté tel quel, seul son support change ;
+- **vérifiée par comparaison des textes extraits** avant et après, la vérification faisant partie du
+  geste et non de la bonne volonté.
+
+**Ce que l'exception ne desserre pas** : corriger le fond d'une entrée reste interdit, et la
+correction continue de s'ajouter plutôt que de se substituer. La frontière est nette et
+mécaniquement vérifiable — si les textes extraits diffèrent, ce n'est pas une conversion.
+
+Ce qui justifie de l'ouvrir plutôt que de contourner par l'archivage :
+
+- **Aucune référence entrante ne pointe vers une entrée.** Mesuré le 2026-08-03 sur deux journaux
+  réels : 56 liens entrants au total, **zéro** vers une ancre de chantier. Le risque classique d'une
+  réécriture — des liens qui pointent silencieusement ailleurs — est nul ici.
+- **L'état antérieur n'est jamais perdu** : le versionnement le conserve. La garantie « sans rien
+  perdre » qu'A-9 réclame est déjà fournie par Git, indépendamment de la règle d'ajout seul.
+- **Rien d'automatisé ne lit ces documents** : pas de parseur, pas de génération. Le format n'est un
+  contrat vis-à-vis de personne.
+- Un journal dont les hashes ont été invalidés par une réécriture d'historique porte aujourd'hui une
+  **table de correspondance** en tête, précisément parce qu'A-4 interdit de corriger en place. Une
+  conversion permettrait de l'appliquer et de supprimer la table.
+
+> **❗ Convertir n'est pas réduire**
+>
+> Ces deux gestes se ressemblent et n'ont pas le même coût. La **conversion** est mécanique,
+> scriptable, sans perte, et c'est elle que l'exception autorise. La **réduction** — ramener des
+> résumés de plusieurs centaines de caractères à une ligne — supprime de l'information, autant de
+> fois qu'il y a d'entrées, et personne ne relit l'ensemble pour vérifier ce qui a sauté. Elle reste
+> hors de l'exception : le format resserré s'applique aux entrées **nouvelles**, et le gain de
+> densité s'installe par accumulation.
+
+*À trancher en écrivant : le numéro de l'exception dans le corps d'A-4 — la règle porte déjà une
+exception nommée (le marqueur `(commit en cours)` remplacé par le hash réel), et celle-ci serait la
+seconde. Régime : **touche le noyau**, donc la remise à niveau se propose projet par projet, sans
+effet sur un projet qui ne convertit rien.*
 
 ## Hors périmètre
 
