@@ -14,6 +14,35 @@ répété ici : il est déclaré dans la table des révisions, en pied de
 
 ---
 
+## `20260804-071239` — 2026-08-04
+
+Troisième et dernier chantier de la réforme d'amaigrissement de la roadmap : le journal peut
+désormais s'écrire dans un format plus dense, sans que ce soit une obligation.
+
+**Ajouté**
+
+- **Option `journal-format`** — `tableau` (défaut, inchangé) ou `log` : un tableau unique et
+  plat pour tout le journal, trié de la plus récente à la plus ancienne entrée, `Chantier`
+  devenant un champ de la ligne plutôt qu'un regroupement en section. Mesuré le 2026-08-03
+  sur deux journaux réels : résumé médian à 500-600 caractères, jusqu'à 93 % des entrées
+  au-delà de 200 caractères, 44-58 % du poids du fichier occupé par le seul texte des
+  résumés.
+- **En `log`** : `Résumé` borné à 250 caractères (vérifiable d'un `grep`) ; le paragraphe de
+  contexte de chantier n'a plus sa place et bascule, s'il compte encore, en fait stable dans
+  `AI-CONTEXT` (A-2) ; les liens d'ancre survivent sous forme courte, insérés dans le texte
+  du résumé (`[#N]`, `[roadmap#slug]`) et comptés dans la borne. Convertir un journal
+  existant du `tableau` vers `log` est permis par la deuxième exception nommée d'A-4
+  (`20260804-064238`) — jamais une obligation.
+- **`GABARITS.md`** : § `AI-HISTORY` porte désormais les deux variantes (`tableau` et
+  `log`) ; § `AI-CONTEXT` note que le pourquoi d'un chantier peut y atterrir comme fait
+  stable ; § 7 (`PROFIL.md`, table des trois profils) et la table des options portent la
+  nouvelle clé — `log` en profil `complet`, `tableau` ailleurs.
+
+Régime : purement additive. Nouvelle option, aucun défaut existant ne change ; un projet qui
+ne répond pas hérite de `tableau` sans que rien ne bouge dans son journal.
+
+---
+
 ## `20260804-064238` — 2026-08-04
 
 Deux chantiers de la réforme d'amaigrissement de la roadmap : une exception nommée pour
