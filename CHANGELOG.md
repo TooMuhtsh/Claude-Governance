@@ -14,6 +14,46 @@ répété ici : il est déclaré dans la table des révisions, en pied de
 
 ---
 
+## `20260804-064238` — 2026-08-04
+
+Deux chantiers de la réforme d'amaigrissement de la roadmap : une exception nommée pour
+convertir un journal existant sans le réécrire, et une option pour désencombrer une roadmap
+de ses chantiers déjà livrés. Les deux touchent le noyau — A-4 pour la première, A-8 pour la
+seconde.
+
+**Ajouté**
+
+- **Deuxième exception d'A-4 : la conversion de format.** Faire passer un journal existant
+  d'un support à un autre (tableau vers lignes de log, HTML vers Markdown) est permis sous
+  quatre conditions cumulatives : décidée en révision, appliquée en une fois à tout le
+  document, à contenu constant, vérifiée par comparaison des textes extraits avant et après.
+  Distinction posée dans le même geste : **convertir n'est pas réduire** — la conversion est
+  mécanique et sans perte, la réduction supprime de l'information et reste hors de
+  l'exception. Aucune référence entrante ne pointe aujourd'hui vers une ancre de chantier de
+  journal (mesuré le 2026-08-03 sur deux projets réels, 56 liens entrants, zéro vers une
+  ancre) : le risque classique d'une réécriture — des liens qui pointent silencieusement
+  ailleurs — est nul ici.
+- **Option `registre-livrés`** — sépare, par défaut, la roadmap active du registre des
+  chantiers livrés. Un chantier `Livré` ou `Adopté` quitte le détail de la roadmap pour une
+  annexe `annexes/REALISE.{{ext}}` (A-8, jamais `archive/` : A-9 interdirait la
+  condensation et l'amendement d'un chantier livré) ; la roadmap n'en garde qu'une ligne et
+  le lien. Mesuré le 2026-08-03 sur un projet réel : 87 % des pastilles de statut de sa
+  roadmap marquaient un chantier déjà livré.
+- **`GABARITS.md` § 9 — registre des chantiers livrés** : plan de l'annexe, ce que porte une
+  entrée (design, renvoi au journal, évolutions post-livraison en une ligne chacune, pièges
+  sans réexplication, liste des commits), règles de bascule, et le piège de la réécriture
+  d'historique qui invalide une ligne de commits en silence.
+
+**Modifié**
+
+- **A-8** cite désormais ce registre parmi les usages typiques d'`annexes/`.
+- **`GABARITS.md` § 3, plan de `ROADMAP`** : un chantier arrivé à son état terminal n'a plus
+  de section de détail quand `registre-livrés = oui`, seulement une ligne de renvoi.
+- **`GABARITS.md` § 7** : le gabarit de `PROFIL.md` et la table des trois profils de départ
+  portent la nouvelle option (`non` en `minimal`, `oui` ailleurs).
+
+---
+
 ## `20260803-200821` — 2026-08-03
 
 Deux dettes de la charte sur elle-même : une table de transition dont la condition de retrait était
