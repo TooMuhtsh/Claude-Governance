@@ -17,12 +17,6 @@ encore une règle n'a rien à faire dans le dossier qui dit ce qui s'applique.
 | [`AI-HISTORY` au format log obligatoire](#ai-history-au-format-log-obligatoire) | Prévu — instruit par la mesure, design à établir | Non datée |
 | [Gouverner ce dépôt par sa propre charte](#gouverner-ce-dépôt-par-sa-propre-charte) | Écarté | Sans objet |
 
-Deux chantiers de cette réforme sont livrés depuis `20260804-064238` : l'exception de
-conversion de format dans A-4, et l'option `registre-livrés` qui sépare la roadmap active du
-registre des chantiers livrés. Le détail de leur design vivait ici ; il vit désormais dans
-[`GOUVERNANCE-IA.md`](./GOUVERNANCE-IA.md) et [`GABARITS.md`](./GABARITS.md) § 9, et leur
-récit dans [`CHANGELOG.md`](./CHANGELOG.md).
-
 ## Non daté — à faire quand utile
 
 ### `AI-HISTORY` au format log obligatoire
