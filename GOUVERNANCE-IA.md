@@ -38,6 +38,12 @@ et la charte n'en est pas dispensée. Ils sont cités des dizaines de fois ici m
 gabarits, et depuis les documents de chaque projet ; une renumérotation les casserait tous
 en silence.
 
+**Prochain numéro d'invariant libre : `A-16`.** A-6 exige qu'un document à numérotation
+stable porte cette information en tête, et la charte ne s'en dispense pas plus que du
+reste : l'ordre d'affichage ne suivant pas la numérotation, aucune lecture partielle ne
+donne le dernier numéro attribué. Celui qui ajoute un invariant l'incrémente dans le même
+geste.
+
 Conséquences pour une révision future :
 
 - un invariant ajouté prend le **numéro suivant**, quelle que soit sa place logique dans le
@@ -1172,51 +1178,11 @@ workspace
 
 ---
 
-# Correspondance avec la numérotation antérieure
-
-**Table temporaire**, à retirer à la révision suivante une fois les références des projets
-migrées. Une table de compatibilité sans date de péremption reste éternellement.
-
-| Ancienne référence | Nouvelle |
-|---|---|
-| Règle 1 — dossier `.AIRules/` versionné | A-1, A-7, A-10 |
-| Règle 1 — `.tempfiles/` | option `tempfiles` |
-| Règle 1 — annexes | A-8 |
-| Règle 1 — archive | A-9 |
-| Règle 1 — éclatement d'une page | `GABARITS.md` § éclatement |
-| Règle 1 — trois questions au SETUP | options `visibilité`, `attribution`, `authentification` |
-| Règle 1 — vérification périodique par cron | option `veille-conformité` |
-| Règle 1 — colonne `Hash` | A-4 |
-| Règle 2 — format HTML, squelettes, navbar | option `format` + `GABARITS.md` |
-| Règle 2 — plan de chaque page | `GABARITS.md` |
-| Règle 2 — discipline d'édition, liens relatifs | A-14 |
-| Règle 2 — identifiants stables, compteur | A-6 |
-| Règle 2 — callouts | A-14 |
-| Règle 2 — pastilles de statut | option `statuts` |
-| Règle 2 — cadences d'écriture | A-3 |
-| Règle 3 — `CLAUDE.md` et mémoire | A-11 |
-| Règle 3 — attribution IA en commit | option `attribution` |
-| Règle 4 — détection de dérive | A-5 |
-| Règle 4 — validation avant « fait » | A-12 + option `validation` |
-| Règle 4 — données jetables | A-12 + option `jetables` |
-| Règle 4 — export d'API à deux niveaux | A-12 (généralisé) |
-| Règle 4 — sauvegarde puis `diff` | A-12 |
-| Règle 4 — encodage / PowerShell | A-12 (généralisé) |
-| Règle 4 — test manuel d'abord | option `test-manuel` |
-| Règle 4 — compromis sûreté/complétude | A-12 |
-| Règle 4 — bibliothèque avant maison | A-12 + option `dépendances` |
-| Règle 5 — statusline | § Environnement de travail + `outils/` du dépôt canonique |
-| Règle 6 — idée avant code | option `roadmap-avant-code` |
-| Règle 6 — propositions numérotées | A-13 |
-| Règle 7 — cas A et cas B | A-15 |
-| Règle 7 — suivre les révisions | A-7 |
-
----
-
 # Historique des révisions
 
 | Version | Régime |
 |---|---|
+| `20260803-200821` | purement additive |
 | `20260803-182826` | purement additive |
 | `20260731-204511` | purement additive |
 | `20260731-203812` | touche le noyau |
@@ -1234,6 +1200,6 @@ se propose (A-7). Le récit détaillé, lui, ne se lit qu'au moment de réviser,
 révise.
 
 ---
-*Version de cette charte : **`20260803-182826`**. C'est cet identifiant que reprend la
+*Version de cette charte : **`20260803-200821`**. C'est cet identifiant que reprend la
 mention « Conforme à la charte de gouvernance, version {{id}} » dans le pied de page de
 l'index de gouvernance de chaque projet.*
